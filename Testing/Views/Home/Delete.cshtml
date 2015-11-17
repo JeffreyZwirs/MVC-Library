@@ -1,0 +1,15 @@
+﻿@model Testing.Models.DatabaseContext.Books
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<p>
+    Weet u zeker dat deze book: <text>@Model.BookName</text> met genre: <text>@Model.BookGenre</text> wilt verwijderen?
+</p>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete"/> <text>|</text> @Html.ActionLink("Terug naar Index", "Index", "Home")
+}

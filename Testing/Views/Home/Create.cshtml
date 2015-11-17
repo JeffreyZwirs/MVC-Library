@@ -1,0 +1,33 @@
+﻿@model Testing.Models.DatabaseContext.Books
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add book</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.LabelFor(m => m.BookName)
+    </div>
+
+    <div>
+        @Html.EditorFor(m => m.BookName)
+        @Html.ValidationMessageFor(v => v.BookName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.BookGenre)
+    </div>
+
+    <div>
+        @Html.EditorFor(m => m.BookGenre)
+        @Html.ValidationMessageFor(v => v.BookGenre)
+    </div>
+
+    <div><br />
+        <input type="submit" value="Add" /> <text>|</text> @Html.ActionLink("Terug naar index", "Index", "Home")
+    </div>
+}
